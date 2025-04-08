@@ -1,11 +1,32 @@
 import './App.css';
-import { Box, Container, createTheme, CssBaseline, ThemeProvider, Typography } from '@mui/material';
+import { Box, createTheme, CssBaseline, responsiveFontSizes, ThemeProvider, } from '@mui/material';
 import Navbar from './layout/Navbar';
+import ProjectList from './features/projects/ProjectList';
+import AboutMe from './features/AboutMe';
+import Contact from './features/Contact';
 
 
-const theme = createTheme({
+let theme = createTheme({
   //To-Do, Theme this up!!
-})
+  typography: {
+    fontFamily: 'Montserrat Variable',
+    body1: {
+      fontSize: 20
+    }
+  },
+  palette: {
+    primary: {
+      main: '#2937d6'
+    },
+    secondary: {
+      main: '#d32f2f'
+    },
+    text: {
+      primary: '#2937d6'
+    }
+  }
+});
+theme = responsiveFontSizes(theme);
 
 function App() {
   return (
@@ -16,9 +37,9 @@ function App() {
         minHeight: '100vh'
       }}>
         <Navbar />
-        <Container maxWidth='xl'>
-          <Typography variant='h1'>Jeffery Yu</Typography>
-        </Container>
+        <AboutMe />
+        <ProjectList />
+        <Contact />
       </Box>
     </ThemeProvider>
   );

@@ -2,28 +2,41 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
+import { Link, List, ListItem } from '@mui/material';
+
+const rightLinks = [
+    {title: 'projects', link: '#projects'},
+    {title: 'contact', link: '#contact'}
+]
 
 export default function Navbar() {
   return (
-    <Box sx={{ flexGrow: 1}}>
-      <AppBar position="static" style={{backgroundColor: 'transparent', boxShadow: '0px'}}>
-        <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            News
-          </Typography>
-          <Button color="inherit">Login</Button>
+    <Box sx={{ flexGrow: 1, position: 'fixed', width: '100%', background: 'rgba(217, 214, 214, 0.9)'}}>
+      <AppBar position='static' style={{backgroundColor: 'transparent'}}>
+        <Toolbar sx={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+            <Box display='flex' alignContent='center'>
+                <Typography 
+                    variant="h6" 
+                    sx={{ flexGrow: 1 }}
+                    component={Link}
+                    underline='none'
+                    href='#'
+                >
+                    Jeffery Yu
+                </Typography>
+            </Box>
+            <List sx={{display: 'flex'}}>
+                {rightLinks.map(({title, link}) => (
+                    <ListItem
+                        component={Link}
+                        underline='none'
+                        href={link}
+                        key={title}
+                    >
+                        {title.toUpperCase()}
+                    </ListItem>
+                ))}
+            </List>
         </Toolbar>
       </AppBar>
     </Box>
