@@ -6,11 +6,16 @@ import ProjectItem from './ProjectItem'
 export default function ProjectList() {
 
   const projects = [
-    { title: 'example project', 
-      links: ['https://example.com/', 'https://github.com/Jeffery-ChangZe-Yu/Jeffery-ChangZe-Yu.github.io'], //github link or website link here
+    // { title: 'example project', 
+    //   links: ['https://example.com/', 'https://github.com/Jeffery-ChangZe-Yu/Jeffery-ChangZe-Yu.github.io'], //github link or website link here
+    //   picUrl: 'assets/exampleProject.png', //store pics in public??? For now not working, not importing with build
+    //   description: 'example project to feature heress, lorems ipsum blah blee'
+    // },
+    { title: 'Spotify Shuffler', 
+      links: ['https://github.com/Jeffery-ChangZe-Yu/spotify_shuffle', '',], //github link or website link here
       picUrl: 'assets/exampleProject.png', //store pics in public??? For now not working, not importing with build
-      description: 'example project to feature heress, lorems ipsum blah blee'
-    }
+      description: 'A command line and local website that randomizes yout Spotify music!'
+    },
   ]
 
   return (

@@ -8,8 +8,8 @@ type Props = {
 }
 
 export default function ProjectItem({title, links, pictureUrl, description}: Props) {
-  const websiteLink = links[0];
-  const githubLink = links[1];
+  const websiteLink = links[1];
+  const githubLink = links[0];
 
     return (
     <Card>
@@ -25,12 +25,16 @@ export default function ProjectItem({title, links, pictureUrl, description}: Pro
             </CardContent>
         </CardActionArea>
         <CardActions>
-            <Button component={Link} href={websiteLink}>
-                Website
-            </Button>
             <Button component={Link} href={githubLink}>
                 Github
             </Button>
+            
+            {websiteLink !== '' && 
+                <Button component={Link} href={websiteLink}>
+                    Website
+                </Button>
+            }
+            
         </CardActions>
     </Card>
   )
